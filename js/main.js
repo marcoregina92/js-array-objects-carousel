@@ -22,11 +22,17 @@ const scheda = [
     }
 ];
 
-for (let i = 0; i < scheda.length; i++) {
-    const box = scheda[i];
-    console.log(`Image: ${box.image}, Title: ${box.title}, Text: ${box.text}` );
-    
-}
+let imagesToAdd = "";
+
+scheda.forEach((element, index) => {
+
+    console.log(element, index);
+    let image = `<img src="${element.image}">`;
+    imagesToAdd += image;
+});
+
+document.getElementById("boxImage").innerHTML = imagesToAdd;
+
 
 // let currentImg = 0;
 // const images = document.querySelectorAll("#boxImage img");
