@@ -1,0 +1,42 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    text-align: center;
+    padding-top: 50px;
+}
+
+
+#boxImage {
+    width: 800px;
+    height: 400px;
+    margin: 0 auto;
+    position: relative;
+}
+
+#boxImage img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: none;
+}
+
+#boxImage img.blockImage {
+    display: block;
+}
+
+#btnRight {
+    position: absolute;
+    top: 230px;
+    right: 520px;
+}
+
+#btnLeft {
+    position: absolute;
+    top: 230px;
+    left: 520px;
+}
