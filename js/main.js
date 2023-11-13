@@ -24,22 +24,36 @@ const scheda = [
 
 
 // Ciclo per inserire immagini
-let imagesToAdd = "";
+let addImages = "";
+let addText = "";
 
 scheda.forEach((element, index) => {
 
     console.log(element, index);
     let image = `<img src="${element.image}">`;
-    imagesToAdd += image;
+    let title = `<h2 id="title">${element.title}</h2>`
+    let text = `<p id="text">${element.text}</p>`
+    
+    addImages += `${image} ${title} ${text}`;
+    console.log(image);
+    console.log(title);
+    console.log(text);
 });
 
 // Stampo le immagini in DOM
-document.getElementById("boxImage").innerHTML = imagesToAdd;
+document.getElementById("boxImage").innerHTML = addImages;
 
 // Inserisco la prima immagina di default
 let currentImg = 0;
 const images = document.querySelectorAll("#boxImage img");
 images[currentImg].classList.add("blockImage");
+
+// Inserisco Titolo e testo
+let insertTitle = document.querySelectorAll("#title");
+let insertText = document.querySelectorAll("#text");
+insertTitle[currentImg].classList.add("blockTitle");
+insertText[currentImg].classList.add("blockText");
+
 
 
 

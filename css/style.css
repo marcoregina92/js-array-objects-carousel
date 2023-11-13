@@ -47,6 +47,7 @@ body {
     padding: 10px;
     text-align: right;
     color: white;
+    display: none;
 }
 
 #text {
@@ -55,4 +56,13 @@ body {
     color: white;
     text-align: right;
     padding: 10px;
+    display: none;
+}
+
+#boxImage h2.blockTitle {
+    display: block;
+}
+
+#boxImage p.blockText {
+    display: block;
 }
