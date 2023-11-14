@@ -49,37 +49,51 @@ const images = document.querySelectorAll("#boxImage img");
 images[currentImg].classList.add("blockImage");
 
 // Inserisco Titolo e testo
-let insertTitle = document.querySelectorAll("#title");
-let insertText = document.querySelectorAll("#text");
+const insertTitle = document.querySelectorAll("#title");
+const insertText = document.querySelectorAll("#text");
 insertTitle[currentImg].classList.add("blockTitle");
 insertText[currentImg].classList.add("blockText");
 
 
 
+document.getElementById("btnRight").addEventListener("click", function () {
+    console.log("avanti");
+    if (currentImg < images.length - 1) {
+        images[currentImg].classList.remove("blockImage");
+        insertTitle[currentImg].classList.remove("blockTitle");
+        insertText[currentImg].classList.remove("blockText");
+        currentImg++;
+        images[currentImg].classList.add("blockImage");
+        insertTitle[currentImg].classList.add("blockTitle");
+        insertText[currentImg].classList.add("blockText");
+    }else if (currentImg == images.length - 1) {
+        images[currentImg].classList.remove("blockImage");
+        insertTitle[currentImg].classList.remove("blockTitle");
+        insertText[currentImg].classList.remove("blockText");
+        currentImg = 0;
+        images[currentImg].classList.add("blockImage");
+        insertTitle[currentImg].classList.add("blockTitle");
+        insertText[currentImg].classList.add("blockText");
+    }
+});
 
-
-// document.getElementById("btnRight").addEventListener("click", function () {
-//     console.log("avanti");
-//     if (currentImg < images.length - 1) {
-//         images[currentImg].classList.remove("blockImage");
-//         currentImg++;
-//         images[currentImg].classList.add("blockImage");
-//     }else if (currentImg == images.length - 1) {
-//         images[currentImg].classList.remove("blockImage");
-//         currentImg = 0;
-//         images[currentImg].classList.add("blockImage");
-//     }
-// });
-
-// document.getElementById("btnLeft").addEventListener("click", function () {
-//     console.log("indietro");
-//     if (currentImg > 0) {
-//         images[currentImg].classList.remove("blockImage");
-//         currentImg--;
-//         images[currentImg].classList.add("blockImage");
-//     }else if (currentImg == 0) {
-//         images[currentImg].classList.remove("blockImage");
-//         currentImg = images.length - 1;
-//         images[currentImg].classList.add("blockImage");
-//     }
-// });
+document.getElementById("btnLeft").addEventListener("click", function () {
+    console.log("indietro");
+    if (currentImg > 0) {
+        images[currentImg].classList.remove("blockImage");
+        insertTitle[currentImg].classList.remove("blockTitle");
+        insertText[currentImg].classList.remove("blockText");
+        currentImg--;
+        images[currentImg].classList.add("blockImage");
+        insertTitle[currentImg].classList.add("blockTitle");
+        insertText[currentImg].classList.add("blockText");
+    }else if (currentImg == 0) {
+        images[currentImg].classList.remove("blockImage");
+        insertTitle[currentImg].classList.remove("blockTitle");
+        insertText[currentImg].classList.remove("blockText");
+        currentImg = images.length - 1;
+        images[currentImg].classList.add("blockImage");
+        insertTitle[currentImg].classList.add("blockTitle");
+        insertText[currentImg].classList.add("blockText");
+    }
+});
