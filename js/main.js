@@ -118,4 +118,4 @@ setInterval(function () {
         insertTitle[currentImg].classList.add("blockTitle");
         insertText[currentImg].classList.add("blockText");
     }
-}, 2000);
+}, 4000);
