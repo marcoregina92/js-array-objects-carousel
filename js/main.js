@@ -25,7 +25,7 @@ const scheda = [
 
 // Ciclo per inserire immagini
 let addImages = "";
-let addText = "";
+// let addText = "";
 
 scheda.forEach((element, index) => {
 
@@ -41,7 +41,7 @@ scheda.forEach((element, index) => {
 });
 
 // Stampo le immagini in DOM
-document.getElementById("boxImage").innerHTML = addImages;
+document.getElementById("boxImage").innerHTML += addImages;
 
 // Inserisco la prima immagina di default
 let currentImg = 0;
@@ -58,7 +58,7 @@ insertText[currentImg].classList.add("blockText");
 
 document.getElementById("btnRight").addEventListener("click", function () {
     console.log("avanti");
-    if (currentImg < images.length - 1) {
+    if (currentImg < scheda.length - 1) {
         images[currentImg].classList.remove("blockImage");
         insertTitle[currentImg].classList.remove("blockTitle");
         insertText[currentImg].classList.remove("blockText");
@@ -66,7 +66,7 @@ document.getElementById("btnRight").addEventListener("click", function () {
         images[currentImg].classList.add("blockImage");
         insertTitle[currentImg].classList.add("blockTitle");
         insertText[currentImg].classList.add("blockText");
-    }else if (currentImg == images.length - 1) {
+    }else if (currentImg == scheda.length - 1) {
         images[currentImg].classList.remove("blockImage");
         insertTitle[currentImg].classList.remove("blockTitle");
         insertText[currentImg].classList.remove("blockText");
@@ -97,3 +97,25 @@ document.getElementById("btnLeft").addEventListener("click", function () {
         insertText[currentImg].classList.add("blockText");
     }
 });
+
+// Inserisco Autoplay 
+
+setInterval(function () {
+    if (currentImg < scheda.length - 1) {
+        images[currentImg].classList.remove("blockImage");
+        insertTitle[currentImg].classList.remove("blockTitle");
+        insertText[currentImg].classList.remove("blockText");
+        currentImg++;
+        images[currentImg].classList.add("blockImage");
+        insertTitle[currentImg].classList.add("blockTitle");
+        insertText[currentImg].classList.add("blockText");
+    }else if (currentImg == scheda.length - 1) {
+        images[currentImg].classList.remove("blockImage");
+        insertTitle[currentImg].classList.remove("blockTitle");
+        insertText[currentImg].classList.remove("blockText");
+        currentImg = 0;
+        images[currentImg].classList.add("blockImage");
+        insertTitle[currentImg].classList.add("blockTitle");
+        insertText[currentImg].classList.add("blockText");
+    }
+}, 2000);
